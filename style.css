@@ -1,0 +1,354 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: rgb(238, 235, 227);
+  font-family: 'Space Mono', monospace;
+  scroll-behavior: smooth;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(238, 235, 227);
+}
+
+#cover {
+  margin-bottom: 200px;
+}
+#contents {
+  margin-bottom: 200px;
+}
+#about {
+  margin-bottom: 200px;
+}
+
+.slide-wrap {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* COVER NAVBAR */
+.navbar { 
+  position: absolute;
+  top: 3%;
+  right: 12%;
+  z-index: 10;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navbar a,
+.navbar span {
+  text-decoration: none;
+  color: #222;
+  font-size: clamp(10px, 1.3vw, 18px);
+}
+
+.navbar a:hover {
+  color: #8aaa45;
+}
+
+/* INVISIBLE TOC BUTTONS */
+.toc-links {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+}
+
+.toc-btn {
+  position: absolute;
+  display: block;
+  text-decoration: none;
+
+  /* makes text invisible */
+  color: transparent;
+  font-size: 25px;
+
+  /* no debug border */
+  border: none;
+  background: transparent;
+}
+
+/* LEFT SIDE */
+.about {
+  top: 43%;
+  left: 18%;
+  width: 30%;
+  height: 10%;
+}
+
+.education {
+  top: 59%;
+  left: 18%;
+  width: 30%;
+  height: 8%;
+}
+
+.skills {
+  top: 77%;
+  left: 18%;
+  width: 30%;
+  height: 8%;
+}
+
+/* RIGHT SIDE */
+.experience {
+  top: 44%;
+  left: 58%;
+  width: 100%;
+  height: 8%;
+}
+
+.projects {
+  top: 60%;
+  left: 58%;
+  width: 100%;
+  height: 8%;
+}
+
+.contact {
+  top: 78%;
+  left: 58%;
+  width: 100%;
+  height: 8%;
+}
+
+/* back button */
+.back { 
+  position: absolute;
+  top: 0.5%;
+  right: 5%;
+  z-index: 10;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.back a,
+.back span {
+  text-decoration: none;
+  color: #222;
+  font-size: clamp(20px, 1.3vw, 18px);
+}
+
+.back a:hover {
+  color: #8aaa45;
+}
+
+.footer-nav {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+
+  z-index: 30;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #222;
+  font-size: 14px;
+
+  background: rgba(238, 235, 227, 0.85);
+
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  backdrop-filter: blur(6px);
+
+  transition: 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: #8aaa45;
+  transform: translateY(-2px);
+}
+
+.mini-break {
+  height: 20vh;
+}
+
+.mini-break .slide-wrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mini-break img {
+  width: 100%;
+  height: auto;
+  max-height: 70%;
+  object-fit: cover;
+}
+
+.mini-break .footer-nav {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+
+.clickable-slide {
+  position: relative;
+}
+
+.clickable-slide img {
+  width: 100%;
+  display: block;
+}
+
+.hotspot {
+  position: absolute;
+  display: block;
+  border-radius: 12px;
+  transition: 0.2s ease;
+}
+
+.hotspot:hover {
+  outline: 4px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+.resume-link {
+  left: 4%;
+  top: 15%;
+  width: 27%;
+  height: 69%;
+}
+
+.card-link {
+  position: absolute;
+
+  left: 55%;
+  top: 54%;
+
+  width: 37%;
+  height: 40%;
+
+  border-radius: 10px;
+}
+
+.clickable-slide {
+  position: relative;
+}
+
+.hotspot {
+  position: absolute;
+  border-radius: 30px;
+
+  transition: all 0.25s ease;
+}
+
+.hotspot:hover {
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 0 25px rgba(255,255,255,0.8);
+  outline: 3px solid rgba(255,255,255,0.9);
+
+  transform: scale(1.03);
+}
+
+/* TOP RIGHT */
+.p1 {
+  left: 69%;
+  top: 7%;
+
+  width: 24%;
+  height: 29%;
+}
+
+/* MIDDLE LEFT */
+.p2 {
+  left: 7%;
+  top: 49%;
+
+  width: 24%;
+  height: 29%;
+}
+
+/* MIDDLE CENTER */
+.p3 {
+  left: 38.5%;
+  top: 49%;
+
+  width: 24%;
+  height: 29%;
+}
+
+/* MIDDLE RIGHT */
+.p4 {
+  left: 69%;
+  top: 49%;
+
+  width: 24%;
+  height: 29%;
+}
+
+.hotspot {
+  position: absolute;
+  border-radius: 30px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+}
+
+.project-info {
+  opacity: 0;
+
+  color: white;
+  text-align: center;
+
+  padding: 20px;
+
+  transition: opacity 0.3s ease;
+}
+
+.project-info h3 {
+  margin: 0 0 10px 0;
+
+  font-size: 1.3rem;
+  font-family: "Space Mono", monospace;
+}
+
+.project-info p {
+  margin: 0;
+
+  font-size: 0.9rem;
+  line-height: 1.4;
+
+  font-family: Arial, sans-serif;
+}
+
+.hotspot:hover {
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(3px);
+
+  box-shadow: 0 0 25px rgba(255,255,255,0.8);
+  transform: scale(1.03);
+}
+
+.hotspot:hover .project-info {
+  opacity: 1;
+}
+
